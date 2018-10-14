@@ -1,0 +1,46 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/cart/index",
+        "pages/category/index",
+        "pages/my/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#845f3f",
+        "navigationBarTitleText": "有品",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "backgroundColor": "#fff",
+        "borderStyle": "white",
+        "selectedColor": "#845f3f",
+        "color": "#845f3f",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "iconPath": "static/images/index.png",
+                "selectedIconPath": "static/images/index.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/category/index",
+                "iconPath": "static/images/category.png",
+                "selectedIconPath": "static/images/category.png",
+                "text": "分类"
+            },
+            {
+                "pagePath": "pages/cart/index",
+                "iconPath": "static/images/cart.png",
+                "selectedIconPath": "static/images/cart.png",
+                "text": "购物车"
+            },
+            {
+                "pagePath": "pages/my/index",
+                "iconPath": "static/images/account.png",
+                "selectedIconPath": "static/images/account.png",
+                "text": "个人"
+            }
+        ]
+    },
+    "component": true
+}
