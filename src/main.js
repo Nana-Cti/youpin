@@ -5,8 +5,11 @@ import MpvueRouterPatch from 'mpvue-router-patch'
 // 引入store vuex
 import store from './store/index'
 
+
+// 使用Router
 Vue.use(MpvueRouterPatch)
-    // store挂载到全局
+
+// store挂载到全局
 Vue.prototype.$store = store
 
 Vue.config.productionTip = false

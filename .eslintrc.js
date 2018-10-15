@@ -50,7 +50,7 @@ module.exports = {
             "always"
         ],
         "space-before-function-paren": [ // 括号与函数名加空格
-            "error", "always"
+            "off", "always"
         ],
         "eqeqeq": [ // 使用 ===
             "error", "always"

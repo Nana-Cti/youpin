@@ -1,10 +1,11 @@
-module.exports = [{
+module.exports = [{ // 第一个默认是首页
         path: 'pages/index/index',
         config: {
             navigationBarTitleText: '首页',
             enablePullDownRefresh: true,
             "usingComponents": {
-                "van-search": "../../static/vant-weapp/search/index"
+                "van-search": "../../static/vant-weapp/search/index",
+                "van-button": "../../static/vant-weapp/button/index"
             }
         }
     },
@@ -19,7 +20,10 @@ module.exports = [{
         path: 'pages/category/index',
         config: {
             navigationBarTitleText: '分类',
-            enablePullDownRefresh: true
+            enablePullDownRefresh: true,
+            "usingComponents": {
+                "van-search": "../../static/vant-weapp/search/index"
+            }
         }
     },
     {
