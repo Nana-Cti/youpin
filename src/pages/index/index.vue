@@ -1,6 +1,14 @@
 <template>
   <div>
-    <van-search background="#845f3f" :value="seachKey" placeholder="请输入搜索关键词" />
+    <van-search background="#845f3f" :value="searchValue" placeholder="九九重阳节 限时特惠" />
+    <swiper class="swiper-container" indicator-dots="true" autoplay="true" interval="3000" duration="800" circular="true">
+      <block v-for="(item, index) in banner " :key="index">
+        <swiper-item>
+          <image :src="item.imageUrl" class="swiper-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    
     <van-button type="primary" size="large" @click="onClick">去购物车</van-button>
   </div>
 </template>
@@ -11,8 +19,11 @@ export default {
     return {}
   },
   computed: {
-    seachKey() {
+    searchValue() {
       return this.$store.state.searchValue
+    },
+    banner() {
+      return this.$store.state.banner
     }
   },
   methods: {
@@ -26,9 +37,26 @@ export default {
 </script>
 
 <style lang="less">
-view.van-cell {
-  border-radius: 14px;
+van-search{
+  view.van-cell {
+  border-radius: 16px;
+  justify-content: center;
+  }
+  view.van-search{
+    padding: 2px 20px 12px 20px;
+  }
+  view.van-cell__value{
+    flex: none;
+    -webkit-flex:none;
+  }
 }
+swiper.swiper-container{
+  image.swiper-image{
+    width: 100%;
+    height: 100%;
+  }
+}
+
 </style>
 
 
