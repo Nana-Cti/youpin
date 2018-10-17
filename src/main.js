@@ -4,7 +4,8 @@ import App from './App'
 import MpvueRouterPatch from 'mpvue-router-patch'
 // 引入store vuex
 import store from './store/index'
-
+// 引入weui-wxss的样式表
+import '../static/weui-wxss/style/weui.wxss'
 
 // 使用Router
 Vue.use(MpvueRouterPatch)

@@ -8,8 +8,10 @@
         </swiper-item>
       </block>
     </swiper>
-    
     <van-button type="primary" size="large" @click="onClick">去购物车</van-button>
+    <view class="weui-footer">
+      <view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>
+    </view>
   </div>
 </template>
 
