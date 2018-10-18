@@ -4,7 +4,13 @@ module.exports = [{ // 第一个默认是首页
             navigationBarTitleText: '首页',
             "usingComponents": {
                 "van-search": "../../static/vant-weapp/search/index",
-                "van-button": "../../static/vant-weapp/button/index"
+                "van-button": "../../static/vant-weapp/button/index",
+                "i-grid": "../../static/iview-weapp/grid/index",
+                "i-grid-item": "../../static/iview-weapp/grid-item/index",
+                "i-grid-icon": "../../static/iview-weapp/grid-icon/index",
+                "i-grid-label": "../../static/iview-weapp/grid-label/index",
+                "van-cell": "../../static/vant-weapp/cell/index",
+                "van-cell-group": "../../static/vant-weapp/cell-group/index"
             }
         }
     },
