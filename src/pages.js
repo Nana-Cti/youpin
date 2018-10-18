@@ -10,7 +10,8 @@ module.exports = [{ // 第一个默认是首页
                 "i-grid-icon": "../../static/iview-weapp/grid-icon/index",
                 "i-grid-label": "../../static/iview-weapp/grid-label/index",
                 "van-cell": "../../static/vant-weapp/cell/index",
-                "van-cell-group": "../../static/vant-weapp/cell-group/index"
+                "van-cell-group": "../../static/vant-weapp/cell-group/index",
+                "van-card": "../../static/vant-weapp/card/index"
             }
         }
     },
@@ -26,9 +27,7 @@ module.exports = [{ // 第一个默认是首页
         config: {
             navigationBarTitleText: '分类',
             enablePullDownRefresh: true,
-            "usingComponents": {
-                "van-search": "../../static/vant-weapp/search/index"
-            }
+            "usingComponents": {}
         }
     },
     {

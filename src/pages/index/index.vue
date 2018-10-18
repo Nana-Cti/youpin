@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-search background="#845f3f" :value="searchValue" placeholder="九九重阳节 限时特惠" />
+    <search :text="'笔记本超级秒杀'"></search>
     <swiper class="swiper-container" indicator-dots="true" autoplay="true" interval="3000" duration="800" circular="true">
       <block v-for="(item, index) in banner " :key="index">
         <swiper-item>
@@ -32,19 +32,35 @@
       :price="zclist.price"
       :crowdfundingInfo="zclist.crowdfundingInfo"
     ></zclist>
-    <van-button type="primary" size="large" @click="onClick">去购物车</van-button>
+    <div class="block-border"></div>
+    <van-cell-group>
+      <van-cell title="今日有品" is-link value="更多" :border="false" url="/pages/index/index"/>
+    </van-cell-group>
+    <div v-for="(item, index) in indexlist " :key="index">
+      <indexlist
+        :imageUrl="item.imageUrl"
+        :tit="item.tit"
+        :desc="item.desc"
+        :price="item.price"
+        :priceMarket="item.priceMarket"
+      ></indexlist>
+    </div>
     <view class="weui-footer">
-      <view class="weui-footer__text">Copyright © 2008-2016 weui.io</view>
+      <view class="weui-footer__text">Copyright © 2018-2018 娜娜出品</view>
     </view>
   </div>
 </template>
 
 <script>
 import zclist from '../../components/zclist'
+import indexlist from '../../components/indexlist'
+import search from '../../components/search.vue'
 
 export default {
   components: {
-    zclist
+    zclist,
+    indexlist,
+    search
   },
   data() {
     return {}
@@ -61,6 +77,9 @@ export default {
     },
     zclist() {
       return this.$store.state.zclist
+    },
+    indexlist() {
+      return this.$store.state.indexlist
     }
   },
   methods: {
@@ -74,19 +93,6 @@ export default {
 </script>
 
 <style lang="less">
-van-search{
-  view.van-cell {
-  border-radius: 16px;
-  justify-content: center;
-  }
-  view.van-search{
-    padding: 2px 20px 12px 20px;
-  }
-  view.van-cell__value{
-    flex: none;
-    -webkit-flex:none;
-  }
-}
 swiper.swiper-container{
   image.swiper-image{
     width: 100%;
@@ -137,6 +143,9 @@ van-cell-group{
   view.van-icon{
     margin-top: 5px;
   }
+}
+view.weui-footer{
+  margin-top: 30px;
 }
 </style>
 

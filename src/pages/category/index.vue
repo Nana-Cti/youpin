@@ -1,9 +1,20 @@
 <template>
   <div>
-    <h1>category</h1>
-    <van-search background="#845f3f" v-bind:value="$store.state.value" placeholder="请输入搜索关键词" />
+    <search :text="'笔记本超级秒杀'"></search>
   </div>
 </template>
 
 <script>
+import search from '../../components/search.vue'
+
+  export default{
+    components: {
+      search
+    }
+  }
 </script>
+
+<style lang="less">
+
+</style>
+
