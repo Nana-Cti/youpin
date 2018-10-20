@@ -49,6 +49,36 @@ const store = new Vuex.Store({
                 price: "￥2399",
                 priceMarket: "￥2499"
             }
+        ],
+        leftMenuList: ["有品推荐", "家居家纺", "家用电器", "有品推荐", "家居家纺", "家用电器", "有品推荐", "家居家纺", "家用电器", "有品推荐", "家居家纺", "家用电器", "有品推荐", "家居家纺", "家用电器"],
+        goodsScrollView: [{
+                imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_98badfe78d2c79e7852337d48017896d.jpeg&w=786&h=395",
+                gridlist: [
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_5a1df07b1e6b38866272697791fda47d.jpeg&w=480&h=480", text: "小米自营" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_5a1df07b1e6b38866272697791fda47d.jpeg&w=480&h=480", text: "小米自营" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_228ac7cec833918d963b4206dfbffe21.jpeg&w=480&h=480", text: "开学必备" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_5a1df07b1e6b38866272697791fda47d.jpeg&w=480&h=480", text: "小米自营" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_228ac7cec833918d963b4206dfbffe21.jpeg&w=480&h=480", text: "开学必备" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" }
+                ]
+            },
+            {
+                imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_98badfe78d2c79e7852337d48017896d.jpeg&w=786&h=395",
+                gridlist: [
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_5a1df07b1e6b38866272697791fda47d.jpeg&w=480&h=480", text: "小米自营" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_5a1df07b1e6b38866272697791fda47d.jpeg&w=480&h=480", text: "小米自营" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_228ac7cec833918d963b4206dfbffe21.jpeg&w=480&h=480", text: "开学必备" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_5a1df07b1e6b38866272697791fda47d.jpeg&w=480&h=480", text: "小米自营" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_228ac7cec833918d963b4206dfbffe21.jpeg&w=480&h=480", text: "开学必备" },
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" }
+                ]
+            }
         ]
     },
     mutations: {

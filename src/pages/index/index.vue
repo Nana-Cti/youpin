@@ -83,9 +83,6 @@ export default {
     }
   },
   methods: {
-    onClick() {
-      this.$router.push({ path: '/pages/cart/index', isTab: true })
-    }
   },
   created() {
   }
