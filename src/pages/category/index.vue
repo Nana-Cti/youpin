@@ -110,22 +110,18 @@ import search from '../../components/search.vue'
         }
         view.weui-grids{
           border:none;
-          display: flex;
-          justify-content: space-between;
-          flex-flow: row wrap;
+          height: 100%;
+          width: 100%;
           navigator.weui-grid{
-            padding: 0 0 13px 0;
+            padding: 0;
+            margin: 0 30px 13px 0;
             border: none;
             width: 70px;
-            flex-basis:33.33333%;
             display: flex;
             justify-content: center;
             flex-direction:column;
             &:nth-of-type(3n){
-              padding: 0 0 13px 30px;
-            }
-            &:nth-of-type(3n-2){
-              padding: 0 30px 13px 0;
+              margin: 0 0 13px 0;
             }
             image.weui-grid__icon{
               width:64px;

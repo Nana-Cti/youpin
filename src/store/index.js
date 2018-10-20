@@ -61,8 +61,7 @@ const store = new Vuex.Store({
                     { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" },
                     { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" },
                     { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_5a1df07b1e6b38866272697791fda47d.jpeg&w=480&h=480", text: "小米自营" },
-                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_228ac7cec833918d963b4206dfbffe21.jpeg&w=480&h=480", text: "开学必备" },
-                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" }
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_228ac7cec833918d963b4206dfbffe21.jpeg&w=480&h=480", text: "开学必备" }
                 ]
             },
             {
@@ -74,10 +73,39 @@ const store = new Vuex.Store({
                     { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_228ac7cec833918d963b4206dfbffe21.jpeg&w=480&h=480", text: "开学必备" },
                     { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" },
                     { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" },
-                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_5a1df07b1e6b38866272697791fda47d.jpeg&w=480&h=480", text: "小米自营" },
-                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_228ac7cec833918d963b4206dfbffe21.jpeg&w=480&h=480", text: "开学必备" },
-                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_bf9fa66a29e7f576cb62e20965f5637b.jpeg&w=480&h=480", text: "每日上新" }
+                    { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_5a1df07b1e6b38866272697791fda47d.jpeg&w=480&h=480", text: "小米自营" }
                 ]
+            }
+        ],
+        recommendList: [{
+                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
+                desc: "感应出泡，高效除菌，亲肤滋润",
+                tit: "泡沫洗手机 感应式",
+                price: "99"
+            },
+            {
+                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
+                desc: "感应出泡，高效除菌，亲肤滋润",
+                tit: "泡沫洗手机 感应式",
+                price: "99"
+            },
+            {
+                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
+                desc: "感应出泡，高效除菌，亲肤滋润",
+                tit: "泡沫洗手机 感应式",
+                price: "99"
+            },
+            {
+                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
+                desc: "感应出泡，高效除菌，亲肤滋润",
+                tit: "泡沫洗手机 感应式",
+                price: "99"
+            },
+            {
+                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
+                desc: "感应出泡，高效除菌，亲肤滋润",
+                tit: "泡沫洗手机 感应式",
+                price: "99"
             }
         ]
     },
