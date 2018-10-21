@@ -2,7 +2,7 @@
   <div>
     <search :text="'笔记本超级秒杀'"></search>
     <div class="mainBox">
-      <scroll-view scroll-y scroll-with-animation="" scroll-into-view="m0" scroll-top="500" class="leftMenuContainer" style="height: 495px">
+      <scroll-view scroll-y scroll-with-animation="" scroll-into-view="m0" scroll-top="500" class="leftMenuContainer">
         <block v-for="(item , index) in leftMenuList" :key="index">
           <div :id="'m'+index" @click="swiperSwitch(index)" :class="{activit:clickClass[index]}">{{item}}</div>
         </block>
@@ -69,7 +69,7 @@ import search from '../../components/search.vue'
   display: flex;
   scroll-view.leftMenuContainer{
     width: 75px;
-    height: 100%;
+    height: 495px;
     padding-top: 13px;
     border-right:solid 1px rgba(0,0,0,.1);
     display: block;

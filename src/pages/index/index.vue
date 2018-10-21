@@ -91,6 +91,7 @@ export default {
 
 <style lang="less">
 swiper.swiper-container{
+  height:150px;
   image.swiper-image{
     width: 100%;
     height: 100%;
