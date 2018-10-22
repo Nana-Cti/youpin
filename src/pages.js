@@ -20,9 +20,8 @@ module.exports = [{ // 第一个默认是首页
         config: { // 页面配置，即 page.json 的内容，可选
             navigationBarTitleText: '购物车',
             "usingComponents": {
-                "van-radio": "../../static/vant-weapp/radio/index",
-                "van-radio-group": "../../static/vant-weapp/radio-group/index",
-                "van-checkbox": "../../static/vant-weapp/checkbox/index"
+                "van-stepper": "../../static/vant-weapp/stepper/index",
+                "van-submit-bar": "../../static/vant-weapp/submit-bar/index"
             }
         }
     },

@@ -8,7 +8,7 @@
         </block>
       </scroll-view>
       <div class="rightGoodsInfoContainer">
-        <swiper :current="id" circular vertical skip-hidden-item-layout class="goodsScrollView">
+        <swiper :current="id" @change="swiperSwitch" circular vertical skip-hidden-item-layout class="goodsScrollView">
           <block v-for="(item , index) in goodsScrollView" :key="index">
             <swiper-item class="goodsScrollitem">
               <image :src="item.imageUrl" class="item-image"/>
@@ -54,11 +54,16 @@ import search from '../../components/search.vue'
     },
     methods: {
       swiperSwitch(index) {
+        if (isNaN(index)) {
+          index = index.target.current
+        }
+        if (this.id !== index) {
+          this.id = index
+        }
         this.clickClass.forEach((item, i) => {
-          this.clickClass[i] = false
+          this.$set(this.clickClass, i, false)
         })
         this.$set(this.clickClass, index, true)
-        this.id = index
       }
     }
   }

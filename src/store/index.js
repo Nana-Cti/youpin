@@ -107,6 +107,19 @@ const store = new Vuex.Store({
                 tit: "泡沫洗手机 感应式",
                 price: "99"
             }
+        ],
+        cartLIst: [{
+                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
+                tit: "8H乳胶床垫M1 玫瑰金 1.2x2m",
+                price: 699,
+                num: 1
+            },
+            {
+                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
+                tit: "8H乳胶床垫M1 玫瑰金 1.2x2m",
+                price: 699,
+                num: 1
+            }
         ]
     },
     mutations: {

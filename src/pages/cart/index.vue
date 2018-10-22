@@ -1,5 +1,5 @@
 <template>
-  <div v-if="false" class="empty">
+  <div v-if="cartLIst.length===0" class="empty">
     <div class="emptyCart">
       <image class="emptyCart-img" src="https://static.home.mi.com/app/shop/pages/m/res/images/cart_grey.png"/>
       <div class="emptyCart-text">
@@ -29,24 +29,35 @@
     </div>
     <div class="cartContent">
       <div class="cartContent-total">
-        <van-radio-group value="1" @change="onChange">
-          <van-radio name="1">有品配送</van-radio>
-        </van-radio-group>
+        <label class="total-tit">
+          <radio @click="onChange" :checked="total" color="#d54648" />
+          有品配送
+        </label>
         <text class="total-tip">
           <text>!</text>
           已免运费
         </text>
       </div>
     </div>
-    <div class="cartItem">
-      <van-checkbox value="checked" @change="onChange">复选框</van-checkbox>
-      <image src="" class="cartItem-img"/>
+    <div class="cartItem" v-for="(item, index) in cartLIst" :key="index">
+      <radio @click="onChange(index)" :checked="selectList[index]" color="#d54648" />
+      <image :src="item.imageUrl" class="cartItem-img"/>
       <div class="cartItem-text">
-        <text>8H乳胶床垫M1 玫瑰金 1.2x2m</text>
-        <text>￥699</text>
+        <text>{{item.tit}}</text>
+        <text>￥{{item.price}}</text>
       </div>
-      
+      <van-stepper class="cartItem-stepper" :value="item.num" min="1" max="10" integer @plus.stop ="numPlus(index)" @minus.stop="numMinus(index)" />
     </div>
+    <van-submit-bar
+      :price="sumPrice"
+      button-text="去结算"
+      @submit="onClickButton"
+      >
+      <label class="total">
+        <radio @click="onChange" :checked="total" color="#d54648" />
+        全选
+      </label>
+    </van-submit-bar>
   </div>
 </template>
 
@@ -56,17 +67,63 @@
       toIndex() {
         this.$router.push({ path: '/pages/index/index', isTab: true })
       },
-      onChange() {
-        console.log("onChange")
+      onChange(index) {
+        if (isNaN(index)) {
+          this.total = !this.total
+          this.selectList.forEach((item, i) => {
+            this.$set(this.selectList, i, this.total)
+          })
+        } else {
+          this.$set(this.selectList, index, !this.selectList[index])
+          let dataList = this.selectList.filter(item => {
+            return item === true
+          })
+          if (this.selectList.length === dataList.length) {
+            this.total = true
+          } else {
+            this.total = false
+          }
+        }
+      },
+      onClickButton() {
+        console.log("this.$router.push")
+      },
+      numPlus(index) {
+        if (this.$store.state.cartLIst[index].num <= 10) {
+          this.$set(this.$store.state.cartLIst[index], "num", this.$store.state.cartLIst[index].num + 1)
+        }
+      },
+      numMinus(index) {
+        if (this.$store.state.cartLIst[index].num > 1) {
+          this.$set(this.$store.state.cartLIst[index], "num", this.$store.state.cartLIst[index].num - 1)
+        }
       }
     },
     data() {
       return {
+        total: true,
+        selectList: []
       }
     },
     computed: {
       recommendList() {
         return this.$store.state.recommendList
+      },
+      cartLIst() {
+        return this.$store.state.cartLIst
+      },
+      sumPrice() {
+        const sumArr = this.$store.state.cartLIst
+        let sum = 0
+        sumArr.forEach(element => {
+          sum += element.price * element.num * 100
+        })
+        return sum
+      }
+    },
+    created() {
+      for (let index = 0; index < this.$store.state.cartLIst.length; index++) {
+        this.selectList.push(true)
       }
     }
   }
@@ -178,6 +235,13 @@
   }
 }
 .cart{
+  height: 554px;
+  font-size: 13px;
+  color:#333;
+  background-color: #f2f2f2;
+  radio{
+    transform:scale(0.8);
+  }
   .cartEdit{
     height: 44px;
     width: 100%;
@@ -204,11 +268,11 @@
     }
   }
   .cartContent-total{
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 44px;
-    border-bottom: 1px solid #f5f5f5;
     padding-left: 14px;
     padding-right: 14px;
     .total-tip{
@@ -225,21 +289,61 @@
         
       }
     }
-    van-icon.van-radio__icon--checked{
-      color: #d54648;
-    }
-    view.van-radio__label{
-      font-size: 12px;
-      margin-left: 6px;
-      line-height: 16px;
+    .total-tit{
+      display: flex;
+      align-items: flex-end;
     }
   }
   .cartItem{
+    background-color: #fff;
+    position: relative;
+    border-top: 1px solid #f5f5f5;
     display: flex;
     align-items: center;
-    margin-left: 14px;
+    padding-left: 14px;
     height: 100px;
     width: 100%;
+    image{
+      height: 84px;
+      width: 84px;
+      border: 1px solid #f5f5f5;
+      margin-right: 10px;
+    }
+    .cartItem-text{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text:last-child{
+        margin-top: 14px;
+        color: #9c0000;
+        display: block;
+      }
+    }
+    .cartItem-stepper{
+      position: absolute;
+      left: 235px;
+      top: 44px;
+    }
+  }
+  van-submit-bar{
+    .total{
+      display: flex;
+      align-items: center;
+      margin-left: 14px;
+    }
+    .van-submit-bar__bar{
+      border-bottom: 1px solid #c6c6c6;
+      height: 54px;
+      .van-submit-bar__price{
+        color: #d34942;
+      }
+      van-button{
+        .van-button--square{
+          background-color: #d34942;
+        }
+      }
+    }
   }
 }
 </style>
