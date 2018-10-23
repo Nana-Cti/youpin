@@ -123,7 +123,11 @@ const store = new Vuex.Store({
         ]
     },
     mutations: {
-
+        // 这是事件(仅同步)
+        updateShoppingCart(state) {}
+    },
+    getters: {
+        // 这个是计算功能
     }
 })
 

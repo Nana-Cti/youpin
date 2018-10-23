@@ -13,6 +13,12 @@
 </template>
 
 <script>
+  export default{
+    methods: {
+      computed() {
+      }
+    }
+  }
 </script>
 
 <style lang="less">

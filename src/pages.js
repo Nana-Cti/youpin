@@ -35,7 +35,10 @@ module.exports = [{ // 第一个默认是首页
     {
         path: 'pages/my/index',
         config: {
-            navigationBarTitleText: '个人'
+            navigationBarTitleText: '个人',
+            "usingComponents": {
+                "van-stepper": "../../static/vant-weapp/stepper/index"
+            }
         }
     }
 ]
