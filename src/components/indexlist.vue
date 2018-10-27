@@ -62,14 +62,16 @@
     }
     div.price{
       display:flex;
-      margin-top:16px;
+      margin-right: 1px;
       font-size:13px;
       color:#B60909;
       height:20px;
       line-height:20px;
       div:last-of-type{
+        margin-left: 5px;
         color:#999;
-        font-size:12px;
+        font-size:13px;
+        text-decoration:line-through;
       }
     }
   }

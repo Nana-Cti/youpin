@@ -3,8 +3,39 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+const moduleA = {
+    state: {
+        cartLIst: [{
+                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
+                tit: "8H乳胶床垫M1 玫瑰金 1.2x2m",
+                price: 699,
+                num: 1
+            },
+            {
+                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
+                tit: "8H乳胶床垫M1 玫瑰金 1.2x2m",
+                price: 699,
+                num: 1
+            }
+        ]
+    },
+    mutations: {
+        changeTheNumber(state, numIndex) {
+            Vue.set(state.cartLIst[numIndex.index], "num", numIndex.num)
+        },
+        deletingGoods(state, deleteList) {
+            for (let index = state.cartLIst.length - 1; index >= 0; index--) {
+                if (deleteList[index]) {
+                    state.cartLIst.splice(index, 1)
+                }
+            }
+        }
+    }
+}
+
 const store = new Vuex.Store({
     state: {
+        signatureID: "",
         searchValue: "",
         banner: [
             { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_89009533dcb446de41228f3d6ef765d4.jpeg" },
@@ -107,27 +138,16 @@ const store = new Vuex.Store({
                 tit: "泡沫洗手机 感应式",
                 price: "99"
             }
-        ],
-        cartLIst: [{
-                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
-                tit: "8H乳胶床垫M1 玫瑰金 1.2x2m",
-                price: 699,
-                num: 1
-            },
-            {
-                imageUrl: "http://img.youpin.mi-img.com/800_pic/100864_24h0j4t2tjf78.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
-                tit: "8H乳胶床垫M1 玫瑰金 1.2x2m",
-                price: 699,
-                num: 1
-            }
         ]
     },
     mutations: {
-        // 这是事件(仅同步)
-        updateShoppingCart(state) {}
+        setID(state, id) {
+            state.signatureID = id
+        }
     },
-    getters: {
-        // 这个是计算功能
+    getters: {},
+    modules: {
+        cart: moduleA
     }
 })
 

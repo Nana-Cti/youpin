@@ -112,7 +112,7 @@
       numChange(event, index) {
         // 商品数量改变
         if (event.mp.detail <= 10 && event.mp.detail >= 1 && this.editCompletion === false) {
-          this.$set(this.$store.state.cartLIst[index], "num", event.mp.detail)
+          this.$store.commit('changeTheNumber', {"index": index, "num": event.mp.detail})
         }
       },
       onEdit() {
@@ -123,16 +123,11 @@
           this.$set(this.selectList, i, false)
         })
         if (!this.editCompletion) {
-          for (let index = this.$store.state.cartLIst.length - 1; index >= 0; index--) {
-            if (this.deleteList[index]) {
-              console.log(index)
-              this.$store.state.cartLIst.splice(index, 1)
-            }
-          }
+          this.$store.commit("deletingGoods", this.deleteList)
           this.deleteList = []
           this.selectList = []
           this.total = true
-          for (let index = 0; index < this.$store.state.cartLIst.length; index++) {
+          for (let index = 0; index < this.$store.state.cart.cartLIst.length; index++) {
             this.selectList.push(true)
           }
         }
@@ -153,11 +148,11 @@
       },
       cartLIst() {
         // 购物车商品列表
-        return this.$store.state.cartLIst
+        return this.$store.state.cart.cartLIst
       },
       sumPrice() {
         // 计算所有选中商品的价格
-        const sumArr = this.$store.state.cartLIst.filter((item, index) => {
+        const sumArr = this.$store.state.cart.cartLIst.filter((item, index) => {
           return this.selectList[index] === true
         })
         let sum = 0
@@ -169,8 +164,8 @@
       sum() {
         // 选中商品的个数 (编辑商品页面使用)
         return this.selectList.filter(item => {
-            return item === true
-          }).length
+          return item === true
+        }).length
       },
       freight() {
         // 运费
@@ -181,9 +176,9 @@
         return this.editCompletion === false ? "编辑" : "完成"
       }
     },
-    created() {
+    onReady() {
       // 进入页面自动全选商品
-      for (let index = 0; index < this.$store.state.cartLIst.length; index++) {
+      for (let index = 0; index < this.$store.state.cart.cartLIst.length; index++) {
         this.selectList.push(true)
       }
     }
@@ -341,13 +336,13 @@
     padding-left: 14px;
     padding-right: 14px;
     .total-tip{
-      font-size: 12px;      
+      font-size: 12px;
       color: #dadada;
       text{
         text-align: center;
-        line-height: 14px;
-        height: 14px;
-        width: 14px;
+        line-height: 13px;
+        height: 13px;
+        width: 13px;
         display: inline-block;
         border: 1px solid #dadada;
         border-radius: 50%;
@@ -420,4 +415,3 @@
   }
 }
 </style>
-
