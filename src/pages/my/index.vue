@@ -14,7 +14,15 @@
     <div class="CouponImg">
       <div></div>
     </div>
-    <div class="center-list"></div>
+    <div class="center-list">
+      <div class="center-list-item" v-for="(item, index) in centerListItem" :key="index">
+        <div class="left-content">
+          <image class="order" :src="item.imageUrl"/>
+          <text>{{item.tit}}</text>
+        </div>
+        <image class="right-arrow" src="../../static/images/right-arrow.png" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -32,7 +40,13 @@
     data() {
       return {
         nickName: "",
-        avatarUrl: ""
+        avatarUrl: "",
+        centerListItem: [
+          {imageUrl: "../../static/images/order.png", tit: "我的订单"},
+          {imageUrl: "../../static/images/coupon.png", tit: "优惠券"},
+          {imageUrl: "../../static/images/address.png", tit: "收货地址"},
+          {imageUrl: "../../static/images/about.png", tit: "关于我们"}
+        ]
       }
     }
   }
@@ -71,6 +85,8 @@
   }
   .login{
     margin: auto;
+    border: 1px solid #fff;
+    color: #fff;
   }
 }
 div.CouponImg{
@@ -88,7 +104,31 @@ div.CouponImg{
 .center-list{
   padding: 0 10px;
   margin-top: 10px;
-  border: 1px solid #f2f2f2;
+  .center-list-item{
+    border-bottom: 1px solid #f2f2f2;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    image.right-arrow{
+      height: 15px;
+      width: 15px;
+    }
+    .left-content{
+      display: flex;
+      justify-content: center;
+      image.order{
+        height: 38px;
+        width: 38px;
+        text-align: center;
+      }
+      text{
+        font-size:16px;
+        line-height: 38px;
+        color:#333;
+      }
+    }
+  }
 }
 </style>
 
