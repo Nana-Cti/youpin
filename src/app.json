@@ -3,12 +3,17 @@
         "pages/index/index",
         "pages/cart/index",
         "pages/category/index",
-        "pages/my/index"
+        "pages/my/index",
+        "pages/search/index",
+        "pages/web/newProduct/index",
+        "pages/web/crowdFunding/index",
+        "pages/web/rushToBuy/index",
+        "pages/web/starProduct/index"
     ],
     "window": {
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#845f3f",
-        "navigationBarTitleText": "有品",
+        "navigationBarTitleText": "娜娜出品",
         "navigationBarTextStyle": "white"
     },
     "tabBar": {

@@ -38,5 +38,33 @@ module.exports = [{ // 第一个默认是首页
             navigationBarTitleText: '个人',
             "usingComponents": {}
         }
+    },
+    {
+        path: 'pages/search/index',
+        config: {
+            "usingComponents": {
+                "van-search": "../../static/vant-weapp/search/index"
+            }
+        }
+    },
+    {
+        path: 'pages/web/newProduct/index',
+        config: {
+            navigationBarTitleText: '新品推荐'
+        }
+    },
+    {
+        path: 'pages/web/crowdFunding/index',
+        config: {
+            navigationBarTitleText: '小米众筹'
+        }
+    },
+    {
+        path: 'pages/web/rushToBuy/index',
+        config: {}
+    },
+    {
+        path: 'pages/web/starProduct/index',
+        config: {}
     }
 ]

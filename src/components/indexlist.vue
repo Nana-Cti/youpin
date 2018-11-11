@@ -12,7 +12,7 @@
           <text>{{desc}}</text>
         </div>
         <div class="price">
-          <div><text>{{price}}</text></div>
+          <div><text>￥{{price}}</text></div>
           <div><text>{{priceMarket}}</text></div>
         </div>
       </div>
@@ -67,6 +67,7 @@
       color:#B60909;
       height:20px;
       line-height:20px;
+      margin-top: 16px;
       div:last-of-type{
         margin-left: 5px;
         color:#999;

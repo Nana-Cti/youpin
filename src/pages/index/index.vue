@@ -10,7 +10,7 @@
     </swiper>
     <i-grid i-class="gridView">
       <block v-for="(item, index) in gridIcon " :key="index">
-        <i-grid-item i-class="gridItem">
+        <i-grid-item i-class="gridItem" @click="onGrig(index)">
           <i-grid-icon i-class="gridIcon">
               <image :src="item.imageUrl" />
           </i-grid-icon>
@@ -66,9 +66,6 @@ export default {
     return {}
   },
   computed: {
-    searchValue() {
-      return this.$store.state.searchValue
-    },
     banner() {
       return this.$store.state.banner
     },
@@ -83,6 +80,25 @@ export default {
     }
   },
   methods: {
+    onGrig(index) {
+      switch (index) {
+        case 0 :
+          this.$router.push({ path: '/pages/web/crowdFunding/index' })
+          break
+        case 1 :
+          this.$router.push({ path: '/pages/web/newProduct/index' })
+          break
+        case 2 :
+          this.$router.push({ path: '/pages/web/rushToBuy/index' })
+          break
+        case 3 :
+          this.$router.push({ path: '/pages/web/starProduct/index' })
+          break
+        case 4 :
+          console.log(index)
+          break
+      }
+    }
   },
   created() {
   }

@@ -127,7 +127,7 @@
           this.deleteList = []
           this.selectList = []
           this.total = true
-          for (let index = 0; index < this.$store.state.cart.cartLIst.length; index++) {
+          for (let index = 0; index < this.cartLIst.length; index++) {
             this.selectList.push(true)
           }
         }

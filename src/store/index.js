@@ -32,11 +32,20 @@ const moduleA = {
         }
     }
 }
+const moduleB = {
+    state: {
+        searchValue: ""
+    },
+    mutations: {
+        changeSearchValue(state, searchValue) {
+            state.searchValue = searchValue
+        }
+    }
+}
 
 const store = new Vuex.Store({
     state: {
         signatureID: "",
-        searchValue: "",
         banner: [
             { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_89009533dcb446de41228f3d6ef765d4.jpeg" },
             { imageUrl: "https://shop.io.mi-img.com/app/shop/img?id=shop_b4b07b19fbde64ec2dc53243ecc1a01f.jpeg" },
@@ -63,21 +72,21 @@ const store = new Vuex.Store({
                 imageUrl: "https://img.youpin.mi-img.com/800_pic/f7ab44b2ee63d5ccde9e3e8d0a5619c8.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
                 tit: "石头扫地机器人",
                 desc: "米家扫地机器人团队出品！ 传感器升级！长续航，智能规划，扫拖一体，清扫性能更强！",
-                price: "￥2399",
+                price: "2399",
                 priceMarket: "￥2499"
             },
             {
                 imageUrl: "https://img.youpin.mi-img.com/800_pic/f7ab44b2ee63d5ccde9e3e8d0a5619c8.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
                 tit: "石头扫地机器人",
                 desc: "米家扫地机器人团队出品！ 传感器升级！长续航，智能规划，扫拖一体，清扫性能更强！",
-                price: "￥2399",
+                price: "2399",
                 priceMarket: "￥2499"
             },
             {
                 imageUrl: "https://img.youpin.mi-img.com/800_pic/f7ab44b2ee63d5ccde9e3e8d0a5619c8.png@base@tag=imgScale&h=350&w=350&et=1&eth=480&etw=480&etc=FFFFFF",
                 tit: "石头扫地机器人",
                 desc: "米家扫地机器人团队出品！ 传感器升级！长续航，智能规划，扫拖一体，清扫性能更强！",
-                price: "￥2399",
+                price: "2399",
                 priceMarket: "￥2499"
             }
         ],
@@ -147,7 +156,8 @@ const store = new Vuex.Store({
     },
     getters: {},
     modules: {
-        cart: moduleA
+        cart: moduleA,
+        search: moduleB
     }
 })
 

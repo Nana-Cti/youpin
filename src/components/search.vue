@@ -1,5 +1,5 @@
 <template>
-  <div class="search">
+  <div class="search" @click="toSearch">
     <div class="search-cell">
       <icon class="search-icon" size="14" type="search"></icon>
       <text>{{text}}</text>
@@ -10,7 +10,12 @@
 <script>
   export default{
     name: 'search',
-    props: ["text"]
+    props: ["text"],
+    methods: {
+      toSearch() {
+        this.$router.push({path: '/pages/search/index'})
+      }
+    }
   }
 </script>
 
