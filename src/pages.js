@@ -61,10 +61,32 @@ module.exports = [{ // 第一个默认是首页
     },
     {
         path: 'pages/web/rushToBuy/index',
-        config: {}
+        config: {
+            navigationBarTitleText: '限时抢购'
+        }
     },
     {
         path: 'pages/web/starProduct/index',
+        config: {
+            navigationBarTitleText: '星品推荐'
+        }
+    },
+    {
+        path: 'pages/crowdfunding/index',
+        config: {
+            navigationBarTitleText: '小米众筹'
+        }
+    },
+    {
+        path: 'pages/searchList/index',
         config: {}
+    },
+    {
+        path: 'pages/detail/index',
+        config: {
+            "usingComponents": {
+                "van-icon": "../../static/vant-weapp/icon/index"
+            }
+        }
     }
 ]

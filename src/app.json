@@ -5,6 +5,9 @@
         "pages/category/index",
         "pages/my/index",
         "pages/search/index",
+        "pages/detail/index",
+        "pages/searchList/index",
+        "pages/crowdfunding/index",
         "pages/web/newProduct/index",
         "pages/web/crowdFunding/index",
         "pages/web/rushToBuy/index",
@@ -47,5 +50,5 @@
             }
         ]
     },
-    "component": true
+    "component": "true"
 }

@@ -15,7 +15,7 @@
     <div class="search-hot-list">
       <div class="search-hot">热门搜索</div>
       <div class="hot-list">
-        <div v-for="(item, index) in hotList" :key="index">{{item}}</div>
+        <div v-for="(item, index) in hotList" :key="index" @click="onSearchHot(index)">{{item}}</div>
       </div>
     </div>
   </div>
@@ -37,8 +37,16 @@
       onSearch(e) {
         if (typeof e.mp.detail !== "object") {
           this.$store.commit('changeSearchValue', e.mp.detail)
+          this.$router.push({path: '/pages/searchList/index'})
         }
+      },
+      onSearchHot(index) {
+        this.$store.commit('changeSearchValue', this.hotList[index])
+        this.$router.push({path: '/pages/searchList/index'})
       }
+    },
+    onUnload() {
+      this.$store.commit('changeSearchValue', "")
     }
   }
 </script>

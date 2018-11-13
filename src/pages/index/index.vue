@@ -23,7 +23,7 @@
     </div>
     <div class="block-border"></div>
     <van-cell-group>
-      <van-cell title="小米众筹" is-link value="更多" :border="false" url="/pages/index/index"/>
+      <van-cell title="小米众筹" is-link value="更多" :border="false" url="/pages/crowdfunding/index"/>
     </van-cell-group>
     <zclist 
       :imgUrl="zclist.imageUrl"
@@ -95,7 +95,7 @@ export default {
           this.$router.push({ path: '/pages/web/starProduct/index' })
           break
         case 4 :
-          console.log(index)
+          this.$router.push({ path: '/pages/web/starProduct/index' })
           break
       }
     }

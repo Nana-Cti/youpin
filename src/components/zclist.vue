@@ -29,13 +29,6 @@
 
 <script>
   export default{
-    // props:{
-    //   imgUrl:String,
-    //   tit:String,
-    //   desc:String,
-    //   price:String,
-    //   crowdfundingInfo:String
-    // },
     props: ["imgUrl", "tit", "desc", "price", "crowdfundingInfo"],
     computed: {
       Percentage() {

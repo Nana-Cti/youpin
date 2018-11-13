@@ -9,7 +9,9 @@ export default {
 
   },
   created() {
-    console.log(this)
+    wx.cloud.init()
+    const db = wx.cloud.database({env: 'nana-cit'})
+    console.log(db)
   }
 }
 </script>
